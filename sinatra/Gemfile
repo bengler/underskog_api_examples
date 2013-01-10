@@ -1,0 +1,13 @@
+source :rubygems
+
+gem 'rack'
+gem 'unicorn'
+gem 'sinatra'
+gem 'sinatra-haml'
+gem 'sinatra-reloader'
+gem 'haml'
+gem 'sass'
+
+gem 'omniauth'
+gem 'omniauth-underskog', git: 'https://github.com/bengler/omniauth-underskog.git'
+gem 'rest-client'

@@ -1,0 +1,15 @@
+%h1
+  Dine siste private beskjedutvekslinger
+- if @messages
+  %ul.messages
+    - @messages.each do |message|
+      %li
+        %h4
+          Fra
+          = message['from']['name']
+          til
+          = message['to']['name']
+        .body
+          = message['body']
+- else
+  Du har ingen beskjedutvekslinger.

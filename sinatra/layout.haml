@@ -1,0 +1,43 @@
+%html
+  %head
+    %title
+      = 'Eksempel-applikasjon'
+    %style
+      :sass
+        body
+          font-family: Helvetica
+          background: #fff
+          padding: 40px 200px
+          font-size: 14px
+        a
+          &:link, &:visited, &:active, &:hover
+            color: #7bf
+        #top_bar
+          color: #888
+          font-size: 12px
+          margin: 0 0 25px 0
+        ul.messages
+          list-style: none
+          padding: 0
+          margin: 0
+          li
+            margin: 5px -5px
+            padding: 5px
+            &:nth-child(odd)
+              background: #f5f5f5
+            > h4
+              margin: 0 0 5px 0
+  %body
+    #top_bar
+      - if @user
+        Du er innlogget som
+        %a{href: "http://underskog.no/medlem/vis/#{@user['name']}"}= @user['name']
+        = '/'
+        %a{href: "/logout"}
+          Logg ut
+      - else
+        Du er ikke logget inn.
+        %a{href: "/login"}
+          Logg inn
+    #content
+      = yield
